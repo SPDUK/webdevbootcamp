@@ -17,7 +17,7 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index");
 
 
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(encodeURI(process.env.DATABASEURL), {useNewUrlParser: true});
 
 
 app.use(bodyParser.urlencoded({extended: true}));
